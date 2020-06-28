@@ -11,7 +11,7 @@ fi
 
 # ZSH Configuration Options
 #--------------------------------------------------------------------------------------------
-export ZSH="/home/samvid/.oh-my-zsh"    # Path to your oh-my-zsh installation
+export ZSH="$HOME/.oh-my-zsh"               # Path to your oh-my-zsh installation
 ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="true"                   # case-sensitive completion
 # HYPHEN_INSENSITIVE="true"             # hyphen-insensitive completion
@@ -26,12 +26,13 @@ ENABLE_CORRECTION="true"                # enable command auto-correction
 # DISABLE_UNTRACKED_FILES_DIRTY="true"  # disable marking untracked files under VCS as dirty
 # HIST_STAMPS="mm/dd/yyyy"              # command execution time stamp in history command o/p
 # ZSH_CUSTOM=/path/to/new-custom-folder # custom folder other than $ZSH/custom
+setopt auto_cd
 #--------------------------------------------------------------------------------------------
 
 
 # ZSH Plugins
 #--------------------------------------------------------------------------------------------
-plugins=(git zsh-autosuggestions sudo copyfile)
+plugins=(git zsh-autosuggestions sudo copyfile wd)
 source $ZSH/oh-my-zsh.sh
 #--------------------------------------------------------------------------------------------
 
@@ -75,10 +76,7 @@ fi
 
 # Environment Variables
 #--------------------------------------------------------------------------------------------
-PATH=~/.local/bin:$PATH
-
-export PATH="/home/samvid/Scripts/:$PATH"
-export NVM_DIR="$HOME/.nvm"
+source ~/.environment
 #--------------------------------------------------------------------------------------------
 
 
@@ -91,10 +89,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # ZSH Syntax Highlighter
 #--------------------------------------------------------------------------------------------
-source /home/samvid/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-wd() {
-  . /home/samvid/.oh-my-zsh/wd/wd.sh
-}
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #--------------------------------------------------------------------------------------------
 
 

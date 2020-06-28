@@ -1,0 +1,6 @@
+[user]
+    name = Samvid
+    email = samvid25@yahoo.com
+    username = samvid25
+[core]
+    editor = code --wait
