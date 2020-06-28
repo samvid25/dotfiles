@@ -1,0 +1,6 @@
+alias telegram='/opt/Telegram/Telegram'
+alias killport='fuser -n tcp -k'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
