@@ -1,9 +1,12 @@
-# Dotfiles
+# `.`files
+
+This is a collection of my dotfiles and scripts to install packages to set-up a new Linux system.
 
 ## Usage
 
 ```bash
-sudo apt install make
+sudo apt update
+sudo apt install git make
 
 git clone https://github.com/samvid25/dotfiles ~/dotfiles
 cd ~/dotfiles
@@ -13,15 +16,15 @@ make install
 
 This will:
 * Create the directory structure
-* Install packages
+* Install packages (uses `apt` and `snap`)
 * Install fonts
-* Load dotfiles (symlinks)
+* Load dotfiles (create symlinks)
 * Change the default shell to `zsh`.
 
 <hr \>
 
 Each step can also be run individually:
-* `make create-directories`
+* `make create-directories`: Creates `~/My_Files/` (I prefer a separate `My_Files` subdirectory cause we all know the clutter that accumulates in the `HOME` directory) and `~/scripts/` (a collection of scripts I regularly use - added to `PATH`)
 * `make install-packages`: Each package/set of packages can also be installed individually:
     * `make install-zsh` installs:
         * `zsh`
@@ -40,11 +43,11 @@ Each step can also be run individually:
     * `make install-vscode` installs Visual Studio Code (via `snap`)
 * `make install-fonts`
 * `make load-dotfiles`
-* `make change-shell`
+* `make change-shell` (requires logging out and logging back in)
 
 ### Windows Subsystem for Linux
 
-Using these dotfiles and themes in WSL requires installing Powerline fonts in Windows. Run the following in an admin Powershell instance:
+Using these dotfiles and themes in WSL requires installing Powerline fonts in Windows. Run the following in an admin PowerShell instance:
 ```
 git clone https://github.com/powerline/fonts.git
 .\install.ps1

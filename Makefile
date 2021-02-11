@@ -2,13 +2,13 @@ SHELL := /bin/bash
 
 create-directories:
 	@if mkdir ~/My_Files; then \
-		echo "Created ~/My_Files/"; \
+		echo "~/My_Files/" created; \
 	else \
 		echo "Error creating ~/My_Files/"; \
 	fi
 
 	@if mkdir ~/scripts; then \
-		echo "Created ~/scripts/"; \
+		echo "~/scripts/" created; \
 	else \
 		echo "Error creating ~/scripts/"; \
 	fi
