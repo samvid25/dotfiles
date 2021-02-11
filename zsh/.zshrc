@@ -87,6 +87,14 @@ source ~/.environment
 #--------------------------------------------------------------------------------------------
 
 
+# Git Completion
+#--------------------------------------------------------------------------------------------
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+#--------------------------------------------------------------------------------------------
+
+
 # ZSH Syntax Highlighter
 #--------------------------------------------------------------------------------------------
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

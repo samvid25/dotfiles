@@ -30,6 +30,7 @@ Each step can also be run individually:
         * `zsh-autosuggestions`
         * `fonts-powerline`
         * `powerlevel10k`
+    * `make install-git-completion` installs [`git-completion`](https://github.com/git/git/tree/master/contrib/completion) for `zsh`
     * `make install-python` installs:
         * `python`
         * `pip`

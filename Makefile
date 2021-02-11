@@ -27,9 +27,24 @@ install-zsh:
 	fi
 
 	@sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	@git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/plugins/zsh-autosuggestions
+	@echo "oh-my-zsh installed"
+
+	@git clone https://github.com/zsh-users/zsh-autosuggestions $(ZSH)/plugins/zsh-autosuggestions
+	@echo "zsh-autosuggestions plugin installed"
+
 	@sudo apt install fonts-powerline
-	@git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+	@echo "Powerline fonts installed"
+
+	@git clone https://github.com/romkatv/powerlevel10k.git $(ZSH)/themes/powerlevel10k
+	@echo "powerlevel10k installed"
+
+install-git-completion:
+	@mkdir ~/.zsh
+	@curl -o ~/.zsh/_git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+	@curl -o ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+
+	@echo "git-completion installed"
+	#@curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
 install-python:
 	@if sudo apt -y install python3; then \
