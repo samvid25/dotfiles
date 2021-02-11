@@ -2,5 +2,6 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
     "terminal.integrated.fontFamily": "Source Code Pro"
 }
