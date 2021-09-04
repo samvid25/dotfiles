@@ -93,12 +93,14 @@ delete-dotfiles:
 	@sudo rm -rf ~/.config/Code/User/settings.json > /dev/null 2>&1
 
 load-dotfiles: delete-dotfiles
-	@ln -sf zsh/.environment ~/.environment
-	@ln -sf zsh/.aliases ~/.aliases
-	@ln -sf zsh/.p10k.zsh ~/.p10k.zsh
-	@ln -sf zsh/.zshrc ~/.zshrc
-	@ln -sf git/.gitconfig ~/.gitconfig
-	@ln -sf vscode/settings.json ~/.config/Code/User/settings.json
+	$(eval dotfile_dir := $(shell pwd))
+	@echo $(dotfile_dir)
+	@ln -sf $(dotfile_dir)/zsh/.environment ~/.environment
+	@ln -sf $(dotfile_dir)/zsh/.aliases ~/.aliases
+	@ln -sf $(dotfile_dir)/zsh/.p10k.zsh ~/.p10k.zsh
+	@ln -sf $(dotfile_dir)/zsh/.zshrc ~/.zshrc
+	@ln -sf $(dotfile_dir)/git/.gitconfig ~/.gitconfig
+	@ln -sf $(dotfile_dir)/vscode/settings.json ~/.config/Code/User/settings.json
 
 change-shell:
 	@sudo chsh -s $(which zsh) $(whoami)
