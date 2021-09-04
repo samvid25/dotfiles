@@ -94,7 +94,6 @@ delete-dotfiles:
 
 load-dotfiles: delete-dotfiles
 	$(eval dotfile_dir := $(shell pwd))
-	@echo $(dotfile_dir)
 	@ln -sf $(dotfile_dir)/zsh/.environment ~/.environment
 	@ln -sf $(dotfile_dir)/zsh/.aliases ~/.aliases
 	@ln -sf $(dotfile_dir)/zsh/.p10k.zsh ~/.p10k.zsh
