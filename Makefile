@@ -29,13 +29,13 @@ install-zsh:
 	@sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 	@echo "oh-my-zsh installed"
 
-	@git clone https://github.com/zsh-users/zsh-autosuggestions $(ZSH)/plugins/zsh-autosuggestions
+	@git clone https://github.com/zsh-users/zsh-autosuggestions $$ZSH/plugins/zsh-autosuggestions
 	@echo "zsh-autosuggestions plugin installed"
 
 	@sudo apt install fonts-powerline
 	@echo "Powerline fonts installed"
 
-	@git clone https://github.com/romkatv/powerlevel10k.git $(ZSH)/themes/powerlevel10k
+	@git clone https://github.com/romkatv/powerlevel10k.git $$ZSH/themes/powerlevel10k
 	@echo "powerlevel10k installed"
 
 install-git-completion:
