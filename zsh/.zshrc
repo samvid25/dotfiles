@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"               # Path to your oh-my-zsh installatio
 ZSH_THEME="powerlevel10k/powerlevel10k"
 CASE_SENSITIVE="true"                   # case-sensitive completion
 # HYPHEN_INSENSITIVE="true"             # hyphen-insensitive completion
-# DISABLE_AUTO_UPDATE="true"            # bi-weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"            # bi-weekly auto-update checks
 # DISABLE_UPDATE_PROMPT="true"          # automatically update without prompting
 # export UPDATE_ZSH_DAYS=13             # how often to auto-update (days)
 # DISABLE_MAGIC_FUNCTIONS=true          # uncomment if pasting URLs/other text is messed up
@@ -82,8 +82,8 @@ source ~/.environment
 
 # NVM bash_completion
 #--------------------------------------------------------------------------------------------
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # Loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Loads nvm bash_completion
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # Loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Loads nvm bash_completion
 #--------------------------------------------------------------------------------------------
 
 
