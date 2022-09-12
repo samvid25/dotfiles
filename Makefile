@@ -21,21 +21,28 @@ install-zsh:
 		echo "zsh install failed"; \
 	fi
 
+install-zsh-highlighting:
 	@if sudo apt-get install zsh-syntax-highlighting; then \
 		echo "zsh-syntax-highlighting installed"; \
 	else \
 		echo "zsh-syntax-highlighting install failed"; \
 	fi
 
-	@sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	@echo "oh-my-zsh installed"
+install-oh-my-zsh:
+	sh -c "`curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`" "" --unattended && (echo "oh-my-zsh installed") || (echo "oh-my-zsh installation failed")
 
-	@git clone https://github.com/zsh-users/zsh-autosuggestions $(ZSH_PATH)/plugins/zsh-autosuggestions
-	@echo "zsh-autosuggestions plugin installed"
+install-zsh-autosuggestions:
+ifneq ($(wildcard $(ZSH_PATH)/plugins/zsh-autosuggestions/.*),)
+	@echo "zsh-autosuggestions already installed"
+else
+	git clone https://github.com/zsh-users/zsh-autosuggestions $(ZSH_PATH)/plugins/zsh-autosuggestions && (echo "zsh-autosuggestions installed") || (echo "zsh-autosuggestions installation failed")
+endif
 
+install-powerline:
 	@sudo apt install fonts-powerline
 	@echo "Powerline fonts installed"
 
+install-powerlevel10k:
 	@git clone https://github.com/romkatv/powerlevel10k.git $(ZSH_PATH)/themes/powerlevel10k
 	@echo "powerlevel10k installed"
 
@@ -80,7 +87,7 @@ install-vscode:
 		echo "vscode install failed."; \
 	fi
 
-install-packages: install-zsh install-python install-node install-code
+install-packages: install-zsh install-oh-my-zsh install-zsh-autosuggestions install-zsh-highlighting install-powerline install-powerlevel10k install-python install-node install-code
 
 install-fonts:
 	cp fonts/*.otf ~/.fonts
